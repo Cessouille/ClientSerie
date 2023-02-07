@@ -34,6 +34,15 @@ namespace ClientSerie.ViewModels
             set { series = value; OnPropertyChanged("Series"); }
         }
 
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; OnPropertyChanged("Id"); }
+        }
+
+
         protected void OnPropertyChanged(string name)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
@@ -45,8 +54,8 @@ namespace ClientSerie.ViewModels
 
         public async void GetDataOnLoadAsync()
         {
-            WSService service = new WSService("https://localhost:7153/api/");
-            List<Serie> result = await service.GetSeriesAsync();
+            WSService service = new WSService("https://apiseriescchau.azurewebsites.net/api/");
+            List<Serie> result = await service.GetSeriesAsync("series");
             if (result == null)
                 DisplayErreurDialog("API non disponible !", "Erreur");
             else

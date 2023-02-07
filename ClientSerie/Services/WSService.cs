@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,27 +23,43 @@ namespace ClientSerie.Services
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public Task<List<Serie>> GetSeriesAsync()
+        public async Task<List<Serie>> GetSeriesAsync(string nomControlleur)
+        {
+            try
+            {
+                return await client.GetFromJsonAsync<List<Serie>>(nomControlleur);
+            }
+
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public async Task<ActionResult<Serie>> GetSerieAsync(int id, string nomControlleur)
+        {
+            try
+            {
+                return await client.GetFromJsonAsync<Serie>(nomControlleur + "/" + id);
+            }
+
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public async Task<IActionResult> PutSerieAsync(int id, Serie serie)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ActionResult<Serie>> GetSerieAsync(int id)
+        public async Task<ActionResult<Serie>> PostSerieAsync(Serie serie)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IActionResult> PutSerieAsync(int id, Serie serie)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ActionResult<Serie>> PostSerieAsync(Serie serie)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IActionResult> DeleteSerieAsync(int id)
+        public async Task<IActionResult> DeleteSerieAsync(int id)
         {
             throw new NotImplementedException();
         }

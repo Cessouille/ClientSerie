@@ -53,7 +53,7 @@ namespace ClientSerie
 
         private Window m_window;
 
-        public AjoutSerieViewModel ConvertisseurEuroVM
+        public AjoutSerieViewModel AjoutSerieVM
         {
             get { return Ioc.Default.GetService<AjoutSerieViewModel>(); }
         }

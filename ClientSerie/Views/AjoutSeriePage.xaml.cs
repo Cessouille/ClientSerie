@@ -29,6 +29,7 @@ namespace ClientSerie.Views
         public AjoutSeriePage()
         {
             this.InitializeComponent();
+            DataContext = ((App)Application.Current).AjoutSerieVM;
         }
     }
 }
