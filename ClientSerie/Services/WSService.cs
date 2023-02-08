@@ -49,9 +49,21 @@ namespace ClientSerie.Services
             }
         }
 
-        public async Task<IActionResult> PutSerieAsync(string nomControlleur, int id, Serie serie)
+        public async Task<bool> PutSerieAsync(string nomControlleur, int id, Serie serie)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var reponse = await client.PutAsJsonAsync(nomControlleur + "/" + id, serie);
+                reponse.EnsureSuccessStatusCode();
+                if (reponse.IsSuccessStatusCode)
+                    return true;
+                return false;
+            }
+
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public async Task<ActionResult<bool>> PostSerieAsync(string nomControlleur, Serie serie)
@@ -67,13 +79,25 @@ namespace ClientSerie.Services
 
             catch (Exception)
             {
-                return null;
+                return false;
             }
         }
 
-        public async Task<IActionResult> DeleteSerieAsync(string nomControlleur, int id)
+        public async Task<bool> DeleteSerieAsync(string nomControlleur, int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var reponse = await client.DeleteAsync(nomControlleur + "/" + id);
+                reponse.EnsureSuccessStatusCode();
+                if (reponse.IsSuccessStatusCode)
+                    return true;
+                return false;
+            }
+
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

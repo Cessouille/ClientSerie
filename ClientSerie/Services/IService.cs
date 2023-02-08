@@ -9,8 +9,8 @@ namespace ClientSerie.Services
     {
         public Task<List<Serie>> GetSeriesAsync(string nomControlleur);
         public Task<ActionResult<Serie>> GetSerieAsync(string nomControlleur, int id);
-        public Task<IActionResult> PutSerieAsync(string nomControlleur, int id, Serie serie);
+        public Task<bool> PutSerieAsync(string nomControlleur, int id, Serie serie);
         public Task<ActionResult<bool>> PostSerieAsync(string nomControlleur, Serie serie);
-        public Task<IActionResult> DeleteSerieAsync(string nomControlleur, int id);
+        public Task<bool> DeleteSerieAsync(string nomControlleur, int id);
     }
 }

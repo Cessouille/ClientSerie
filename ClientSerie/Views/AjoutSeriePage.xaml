@@ -21,12 +21,12 @@
             ItemsSource="{Binding Series, Mode=TwoWay}"
             RelativePanel.AlignHorizontalCenterWithPanel="True" />
         <TextBox
-            Name="tbId"
+            Name="tbIdFind"
             Width="150"
             Margin="10,10,10,10"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
             RelativePanel.Below="cbSeries"
-            Text="{Binding Id, Mode=TwoWay}"
+            Text="{Binding IdFind, Mode=TwoWay}"
             TextAlignment="Center" />
         <Button
             Name="btnFind"
@@ -35,7 +35,7 @@
             Command="{Binding BtnFind}"
             Content="Trouver"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
-            RelativePanel.Below="tbId" />
+            RelativePanel.Below="tbIdFind" />
         <ComboBox
             Name="cbSerie"
             Width="150"
@@ -52,5 +52,37 @@
             Content="Créer"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
             RelativePanel.Below="cbSerie" />
+        <TextBox
+            Name="tbIdDelete"
+            Width="150"
+            Margin="10,10,10,10"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="btnPost"
+            Text="{Binding IdDelete, Mode=TwoWay}"
+            TextAlignment="Center" />
+        <Button
+            Name="btnDelete"
+            Width="150"
+            Margin="10,10,10,10"
+            Command="{Binding BtnDelete}"
+            Content="Supprimer"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="tbIdDelete" />
+        <TextBox
+            Name="tbIdPut"
+            Width="150"
+            Margin="10,10,10,10"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="btnDelete"
+            Text="{Binding IdPut, Mode=TwoWay}"
+            TextAlignment="Center" />
+        <Button
+            Name="btnPut"
+            Width="150"
+            Margin="10,10,10,10"
+            Command="{Binding BtnPut}"
+            Content="Modifier"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="tbIdPut" />
     </RelativePanel>
 </Page>
