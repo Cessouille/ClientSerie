@@ -73,7 +73,7 @@ namespace ClientSerie.ViewModels
         public async void PostDataOnAction()
         {
             WSService service = new WSService("https://apiseriescchau.azurewebsites.net");
-            if (AjoutSerie.Titre == null || AjoutSerie.Resume == null || AjoutSerie.Nbsaisons == null || AjoutSerie.Nbepisodes == null || AjoutSerie.Anneecreation == null || AjoutSerie.Network == null)
+            if (AjoutSerie.Titre == null || AjoutSerie.Resume == null || AjoutSerie.Nbsaisons == 0 || AjoutSerie.Nbepisodes == 0 || AjoutSerie.Anneecreation == 0 || AjoutSerie.Anneecreation > DateTime.Today.Year || AjoutSerie.Network == null)
                 DisplayErreurDialog("Tous les champs sont obligatoires !", "Erreur");
             else
             {
