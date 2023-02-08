@@ -15,15 +15,7 @@ namespace ClientSerie.ViewModels
 
         public AjoutSerieViewModelAbstract()
         {
-            GetDataOnLoadAsync();
-        }
 
-        private Serie serieSelected;
-
-        public Serie SerieSelected
-        {
-            get { return serieSelected; }
-            set { serieSelected = value; OnPropertyChanged("SerieSelected"); }
         }
 
         private ObservableCollection<Serie> series;
@@ -34,29 +26,6 @@ namespace ClientSerie.ViewModels
             set { series = value; OnPropertyChanged("Series"); }
         }
 
-        private int idFind;
-
-        public int IdFind
-        {
-            get { return idFind; }
-            set { idFind = value; OnPropertyChanged("IdPost"); }
-        }
-
-        private int idDelete;
-
-        public int IdDelete
-        {
-            get { return idDelete; }
-            set { idDelete = value; OnPropertyChanged("IdDelete"); }
-        }
-
-        private int idPut;
-
-        public int IdPut
-        {
-            get { return idPut; }
-            set { idPut = value; OnPropertyChanged("IdPut"); }
-        }
 
         protected void OnPropertyChanged(string name)
         {

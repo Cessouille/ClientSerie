@@ -13,76 +13,106 @@
     mc:Ignorable="d">
 
     <RelativePanel>
-        <ComboBox
-            Name="cbSeries"
+        <TextBlock
+            Name="tbTitreInfo"
             Width="150"
             Margin="10,50,10,10"
-            DisplayMemberPath="Titre"
-            ItemsSource="{Binding Series, Mode=TwoWay}"
-            RelativePanel.AlignHorizontalCenterWithPanel="True" />
-        <TextBox
-            Name="tbIdFind"
-            Width="150"
-            Margin="10,10,10,10"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
-            RelativePanel.Below="cbSeries"
-            Text="{Binding IdFind, Mode=TwoWay}"
+            Text="Titre"
             TextAlignment="Center" />
-        <Button
-            Name="btnFind"
+        <TextBox
+            Name="tbTitre"
+            Width="300"
+            Margin="10,5,10,10"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="tbTitreInfo"
+            Text="{Binding AjoutSerie.Titre, Mode=TwoWay}"
+            TextAlignment="Center" />
+        <TextBlock
+            Name="tbResumeInfo"
             Width="150"
             Margin="10,10,10,10"
-            Command="{Binding BtnFind}"
-            Content="Trouver"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
-            RelativePanel.Below="tbIdFind" />
-        <ComboBox
-            Name="cbSerie"
+            RelativePanel.Below="tbTitre"
+            Text="Resume"
+            TextAlignment="Center" />
+        <TextBox
+            Name="tbResume"
+            Width="300"
+            Height="100"
+            Margin="10,5,10,10"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="tbResumeInfo"
+            Text="{Binding AjoutSerie.Resume, Mode=TwoWay}"
+            TextAlignment="Center" />
+        <TextBlock
+            Name="tbSaisonInfo"
             Width="150"
             Margin="10,10,10,10"
-            DisplayMemberPath="Titre"
-            ItemsSource="{Binding SerieSelected, Mode=TwoWay}"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
-            RelativePanel.Below="btnFind" />
+            RelativePanel.Below="tbResume"
+            Text="Nb saisons"
+            TextAlignment="Center" />
+        <NumberBox
+            Name="nbSaison"
+            Width="150"
+            Margin="10,5,10,10"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="tbSaisonInfo"
+            Text="{Binding AjoutSerie.Nbsaisons, Mode=TwoWay}" />
+        <TextBlock
+            Name="tbEpisodeInfo"
+            Width="150"
+            Margin="10,10,10,10"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="nbSaison"
+            Text="Nb episodes"
+            TextAlignment="Center" />
+        <NumberBox
+            Name="nbEpisode"
+            Width="150"
+            Margin="10,5,10,10"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="tbEpisodeInfo"
+            Text="{Binding AjoutSerie.Nbepisodes, Mode=TwoWay}" />
+        <TextBlock
+            Name="tbAnneeInfo"
+            Width="150"
+            Margin="10,10,10,10"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="nbEpisode"
+            Text="Annee creation"
+            TextAlignment="Center" />
+        <NumberBox
+            Name="nbAnnee"
+            Width="150"
+            Margin="10,5,10,10"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="tbAnneeInfo"
+            Text="{Binding AjoutSerie.Anneecreation, Mode=TwoWay}" />
+        <TextBlock
+            Name="tbNetworkInfo"
+            Width="150"
+            Margin="10,10,10,10"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="nbAnnee"
+            Text="Chaine"
+            TextAlignment="Center" />
+        <TextBox
+            Name="tbNetwork"
+            Width="300"
+            Margin="10,5,10,10"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="tbNetworkInfo"
+            Text="{Binding AjoutSerie.Network, Mode=TwoWay}"
+            TextAlignment="Center" />
         <Button
             Name="btnPost"
-            Width="150"
-            Margin="10,10,10,10"
-            Command="{Binding BtnPost}"
-            Content="Créer"
+            Width="300"
+            Margin="10,20,10,10"
+            Command="{Binding BtnPost, Mode=TwoWay}"
+            Content="Ajouter"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
-            RelativePanel.Below="cbSerie" />
-        <TextBox
-            Name="tbIdDelete"
-            Width="150"
-            Margin="10,10,10,10"
-            RelativePanel.AlignHorizontalCenterWithPanel="True"
-            RelativePanel.Below="btnPost"
-            Text="{Binding IdDelete, Mode=TwoWay}"
-            TextAlignment="Center" />
-        <Button
-            Name="btnDelete"
-            Width="150"
-            Margin="10,10,10,10"
-            Command="{Binding BtnDelete}"
-            Content="Supprimer"
-            RelativePanel.AlignHorizontalCenterWithPanel="True"
-            RelativePanel.Below="tbIdDelete" />
-        <TextBox
-            Name="tbIdPut"
-            Width="150"
-            Margin="10,10,10,10"
-            RelativePanel.AlignHorizontalCenterWithPanel="True"
-            RelativePanel.Below="btnDelete"
-            Text="{Binding IdPut, Mode=TwoWay}"
-            TextAlignment="Center" />
-        <Button
-            Name="btnPut"
-            Width="150"
-            Margin="10,10,10,10"
-            Command="{Binding BtnPut}"
-            Content="Modifier"
-            RelativePanel.AlignHorizontalCenterWithPanel="True"
-            RelativePanel.Below="tbIdPut" />
+            RelativePanel.Below="tbNetwork" />
     </RelativePanel>
 </Page>
