@@ -32,16 +32,25 @@
             Name="btnFind"
             Width="150"
             Margin="10,10,10,10"
-            Command="{Binding BtnSetConversion}"
-            Content="Convertir"
+            Command="{Binding BtnFind}"
+            Content="Trouver"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
             RelativePanel.Below="tbId" />
         <ComboBox
-            Name="tbSerie"
+            Name="cbSerie"
+            Width="150"
             Margin="10,10,10,10"
             DisplayMemberPath="Titre"
             ItemsSource="{Binding SerieSelected, Mode=TwoWay}"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
             RelativePanel.Below="btnFind" />
+        <Button
+            Name="btnPost"
+            Width="150"
+            Margin="10,10,10,10"
+            Command="{Binding BtnPost}"
+            Content="Créer"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="cbSerie" />
     </RelativePanel>
 </Page>

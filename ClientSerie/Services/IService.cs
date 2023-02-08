@@ -8,9 +8,9 @@ namespace ClientSerie.Services
     public interface IService
     {
         public Task<List<Serie>> GetSeriesAsync(string nomControlleur);
-        public Task<ActionResult<Serie>> GetSerieAsync(int id, string nomControlleur);
-        public Task<IActionResult> PutSerieAsync(int id, Serie serie);
-        public Task<ActionResult<Serie>> PostSerieAsync(Serie serie);
-        public Task<IActionResult> DeleteSerieAsync(int id);
+        public Task<ActionResult<Serie>> GetSerieAsync(string nomControlleur, int id);
+        public Task<IActionResult> PutSerieAsync(string nomControlleur, int id, Serie serie);
+        public Task<ActionResult<bool>> PostSerieAsync(string nomControlleur, Serie serie);
+        public Task<IActionResult> DeleteSerieAsync(string nomControlleur, int id);
     }
 }

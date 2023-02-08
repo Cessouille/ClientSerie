@@ -54,8 +54,8 @@ namespace ClientSerie.ViewModels
 
         public async void GetDataOnLoadAsync()
         {
-            WSService service = new WSService("https://apiseriescchau.azurewebsites.net/api/");
-            List<Serie> result = await service.GetSeriesAsync("series");
+            WSService service = new WSService("https://apiseriescchau.azurewebsites.net");
+            List<Serie> result = await service.GetSeriesAsync("api/series");
             if (result == null)
                 DisplayErreurDialog("API non disponible !", "Erreur");
             else

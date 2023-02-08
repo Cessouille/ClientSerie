@@ -5,12 +5,35 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace ClientSerie.Models
 {
     [Table("serie")]
     public class Serie
     {
+        [JsonConstructor]
+        public Serie(string titre, string resume, int? nbsaisons, int? nbepisodes, int? anneecreation, string network)
+        {
+            Titre = titre;
+            Resume = resume;
+            Nbsaisons = nbsaisons;
+            Nbepisodes = nbepisodes;
+            Anneecreation = anneecreation;
+            Network = network;
+        }
+
+        public Serie(int serieid, string titre, string resume, int? nbsaisons, int? nbepisodes, int? anneecreation, string network)
+        {
+            Serieid = serieid;
+            Titre = titre;
+            Resume = resume;
+            Nbsaisons = nbsaisons;
+            Nbepisodes = nbepisodes;
+            Anneecreation = anneecreation;
+            Network = network;
+        }
+
         [Key]
         [Column("serieid")]
         public int Serieid { get; set; }
