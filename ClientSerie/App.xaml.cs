@@ -29,6 +29,7 @@ namespace ClientSerie
             Ioc.Default.ConfigureServices(
                 new ServiceCollection()
                 .AddSingleton<AjoutSerieViewModel>()
+                .AddSingleton<ModifSerieViewModel>()
                 .BuildServiceProvider());
         }
 
@@ -46,7 +47,8 @@ namespace ClientSerie
             // Ensure the current window is active
             m_window.Activate();
             //Navigate to the first page
-            rootFrame.Navigate(typeof(AjoutSeriePage));
+            //rootFrame.Navigate(typeof(AjoutSeriePage));
+            rootFrame.Navigate(typeof(ModifSeriePage));
             MainRoot = m_window.Content as FrameworkElement;
         }
         public static FrameworkElement MainRoot { get; private set; }
@@ -56,6 +58,11 @@ namespace ClientSerie
         public AjoutSerieViewModel AjoutSerieVM
         {
             get { return Ioc.Default.GetService<AjoutSerieViewModel>(); }
+        }
+
+        public ModifSerieViewModel ModifSerieVM
+        {
+            get { return Ioc.Default.GetService<ModifSerieViewModel>(); }
         }
     }
 }

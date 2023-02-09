@@ -44,7 +44,8 @@
             RelativePanel.AlignHorizontalCenterWithPanel="True"
             RelativePanel.Below="tbResumeInfo"
             Text="{Binding AjoutSerie.Resume, Mode=TwoWay}"
-            TextAlignment="Center" />
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
         <TextBlock
             Name="tbSaisonInfo"
             Width="150"

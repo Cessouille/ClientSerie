@@ -29,6 +29,7 @@ namespace ClientSerie.Views
         public ModifSeriePage()
         {
             this.InitializeComponent();
+            DataContext = ((App)Application.Current).ModifSerieVM;
         }
     }
 }
