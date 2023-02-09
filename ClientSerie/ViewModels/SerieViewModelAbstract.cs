@@ -9,11 +9,9 @@ using System.ComponentModel;
 
 namespace ClientSerie.ViewModels
 {
-    public abstract class AjoutSerieViewModelAbstract : ObservableObject, INotifyPropertyChanged
+    public abstract class SerieViewModelAbstract : ObservableObject
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public AjoutSerieViewModelAbstract()
+        public SerieViewModelAbstract()
         {
 
         }
@@ -23,18 +21,10 @@ namespace ClientSerie.ViewModels
         public ObservableCollection<Serie> Series
         {
             get { return series; }
-            set { series = value; OnPropertyChanged("Series"); }
+            set { series = value; OnPropertyChanged(); }
         }
 
-
-        protected void OnPropertyChanged(string name)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(name));
-            }
-        }
+        
 
         public async void GetDataOnLoadAsync()
         {

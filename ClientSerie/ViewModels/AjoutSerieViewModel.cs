@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace ClientSerie.ViewModels
 {
-    public class AjoutSerieViewModel : AjoutSerieViewModelAbstract
+    public class AjoutSerieViewModel : SerieViewModelAbstract
     {
         public IRelayCommand BtnFind { get; }
         public IRelayCommand BtnPost { get; }
@@ -63,7 +63,7 @@ namespace ClientSerie.ViewModels
         /*public async void GetDataSerie()
         {
             WSService service = new WSService("https://apiseriescchau.azurewebsites.net");
-            var result = await service.GetSerieAsync("api/series/", IdFind);
+            var result = await service.GetSerieAsync("api/series", 1);
             if (result == null)
                 DisplayErreurDialog("Série non trouvée !", "Erreur");
             else
